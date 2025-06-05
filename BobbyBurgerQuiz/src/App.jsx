@@ -7,16 +7,13 @@ import EndMenu from './components/EndMenu'
 
 function App() {
   const [quizState, setQuizState] = useState("menu")
+  const [scoreState, setScoreState] = useState(0)
 
-  // function handleChangeState() {
-  //   if(quizState === "menu") {
-  //     setQuizState("quiz")
-  //   } else if(quizState === "quiz") {
-  //     setQuizState("end")
-  //   } else if(quizState === "end") {
-  //     setQuizState("menu")
-  //   }
-  // }
+  function handleLocalReset() {
+    localStorage.clear('scoreBoard')
+    console.log('cleared storage =>', localStorage.getItem('scoreBoard'));
+    
+  }
 
   return (
     <>
@@ -24,9 +21,23 @@ function App() {
         <img src="/imgs/Bob's_Burgers_logo.png" alt="Bob's Burgers" />
       </div>
       <div className='contentContainer'>
-      {quizState === "menu" && <StartMenu setQuizState={setQuizState}  />}
-      {quizState === "quiz" && <QuizQuestions setQuizState={setQuizState} />}
-      {quizState === "end" && <EndMenu />}
+      {quizState === "menu" && <StartMenu 
+      setQuizState={setQuizState}
+      />}
+      {quizState === "quiz" && <QuizQuestions 
+      setQuizState={setQuizState}
+      scoreState={scoreState}
+      setScoreState={setScoreState} 
+      />}
+      {quizState === "end" && <EndMenu 
+      setQuizState={setQuizState}
+      scoreState={scoreState}
+      setScoreState={setScoreState}
+      />}
+      </div>
+      <div>
+        score :{scoreState}
+        <button onClick={() => {handleLocalReset()}}>reset localStorage</button>
       </div>
     </>
   )

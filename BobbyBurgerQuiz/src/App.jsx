@@ -35,10 +35,10 @@ function App() {
       setScoreState={setScoreState}
       />}
       </div>
-      <div>
+      {/* <div>
         score :{scoreState}
         <button onClick={() => {handleLocalReset()}}>reset localStorage</button>
-      </div>
+      </div> */}
     </>
   )
 }

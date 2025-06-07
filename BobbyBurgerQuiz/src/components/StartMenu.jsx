@@ -35,7 +35,11 @@ function StartMenu({setQuizState}) {
               <span>No Prevous Scores</span>
             )}
           </div>
-          <button onClick={handleStartQuiz}>Start</button>
+          <button 
+          onClick={handleStartQuiz}
+          className="menuButton"
+          >
+            Start</button>
         </div>
       </div>
     </>

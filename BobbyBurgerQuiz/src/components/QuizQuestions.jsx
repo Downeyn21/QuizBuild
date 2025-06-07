@@ -76,7 +76,13 @@ function QuizQuestions({setQuizState, setScoreState, scoreState}) {
             />
             <label>{questions[currentQuestion].d}</label>
           </div>
-          <button type="submit" >Submit</button>
+          <div className="quizButtonWrapper">
+            <button 
+            type="submit"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </>

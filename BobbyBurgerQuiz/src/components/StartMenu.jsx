@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 function StartMenu({setQuizState}) {
   const [prevScores, setPrevScores] = useState([])
 
-
   function handleStartQuiz() {
     setQuizState("quiz")
   }
